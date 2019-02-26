@@ -33,39 +33,42 @@ html
         .panel
           .box
             article#subtotal.columns.is-multiline.is-mobile
-              .column.is-one-quarter
+              .column.is-half
                 strong Subtotal
               .column.has-text-right
                 = order.subtotal + ' ฿'
             //- TODO: Present promocode value
             - if (order.promo_code)
               article#promo-code.columns.is-mobile
-                .column.is-one-quarter
-                  strong Promo Code
-                .column.has-text-right
-                  = order.promo_code
-                .column.is-one-quarter
-                  strong Discount
-                .column.has-text-right
-                  = order.discount + ' ฿'
+                .column
+                  .columns
+                    .column.is-half
+                      strong Promo Code
+                    .column.has-text-right
+                      = order.promo_code
+                  .columns
+                    .column.is-half
+                      strong Discount
+                    .column.has-text-right
+                      = order.discount + ' ฿'
             //- TODO: Calculate tax value
             - if (order.tax)
               article#tax.columns.is-multiline.is-mobile
-                .column.is-one-quarter
+                .column.is-half
                   strong Tax
                 .column.has-text-right
                   = order.tax + ' ฿'
             //- TODO: Calculate service charge value
             - if (order.service_charge)
               article#service-charge.columns.is-multiline.is-mobile
-                .column.is-one-quarter
+                .column.is-half
                   strong Service Charge
                 .column.has-text-right
                   = order.service_charge + ' ฿'
             //- TODO: Calculate total
             - if (order.total)
               article#total.columns.is-multiline.is-mobile
-                .column.is-one-quarter
+                .column.is-half
                   strong Toal
                 .column.has-text-right
                   = order.total + ' ฿'
