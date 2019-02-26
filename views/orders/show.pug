@@ -1,0 +1,72 @@
+html
+  head
+    title Order Id #
+      = order.id
+    link(
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css'
+    )
+    link(
+      rel='stylesheet'
+      href='/stylesheets/layout.css'
+    )
+  body
+    main.columns.is-vcentered
+      .column
+      .column
+        h1.title.has-text-centered FOODMAN
+        h3.title.is-4 Order Id #
+          = order.id
+        h3.subtitle.is-5 Items
+        #list.panel
+          - for (let i = 0; i < order.order_items.length; i += 1)
+            .box
+              article.media
+                .media-left
+                  .figure.image.is-64x64
+                    img.is-rounded(src=order.order_items[i].image_url)
+                .media-content
+                  strong= order.order_items[i].name + ' '
+                  small= order.order_items[i].quantity + ' ea'
+                .media-right
+                  = order.order_items[i].price + ' ฿'
+        .panel
+          .box
+            article#subtotal.columns.is-multiline.is-mobile
+              .column.is-one-quarter
+                strong Subtotal
+              .column.has-text-right
+                = order.subtotal + ' ฿'
+            //- TODO: Present promocode value
+            - if (order.promo_code)
+              article#promo-code.columns.is-mobile
+                .column.is-one-quarter
+                  strong Promo Code
+                .column.has-text-right
+                  = order.promo_code
+                .column.is-one-quarter
+                  strong Discount
+                .column.has-text-right
+                  = order.discount + ' ฿'
+            //- TODO: Calculate tax value
+            - if (order.tax)
+              article#tax.columns.is-multiline.is-mobile
+                .column.is-one-quarter
+                  strong Tax
+                .column.has-text-right
+                  = order.tax + ' ฿'
+            //- TODO: Calculate service charge value
+            - if (order.service_charge)
+              article#service-charge.columns.is-multiline.is-mobile
+                .column.is-one-quarter
+                  strong Service Charge
+                .column.has-text-right
+                  = order.service_charge + ' ฿'
+            //- TODO: Calculate total
+            - if (order.total)
+              article#total.columns.is-multiline.is-mobile
+                .column.is-one-quarter
+                  strong Toal
+                .column.has-text-right
+                  = order.total + ' ฿'
+      .column
