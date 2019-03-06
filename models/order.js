@@ -49,7 +49,7 @@ module.exports = {
   getTotalFromOrder: function(order) {
     const total =
       order.subtotal + order.service_charge + order.tax - order.discount;
-    const globalDiscount = 0
+    let globalDiscount = 0
     if(config.isActive('global_discount')) globalDiscount = total * 0.5
     return total - globalDiscount
   }
