@@ -34,7 +34,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    return 0;
+    return +(order.subtotal * 0.07).toFixed(2)
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
