@@ -1,6 +1,5 @@
 const fs = require("fs");
 const config = require('../config')
-const PROMO_CODE = true;
 const SERVICE_CHARGE = true;
 const GLOBAL_DISCOUNT = false;
 
@@ -20,7 +19,7 @@ module.exports = {
     const { promo_code, subtotal } = order;
     let discount = 0;
 
-    if (PROMO_CODE) {
+    if (config.isActive('promo_code')) {
       switch (promo_code) {
         case "FULLSTACK":
           discount = 10;
