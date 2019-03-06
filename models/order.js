@@ -1,5 +1,6 @@
 const fs = require("fs");
 const PROMO_CODE = false;
+const SERVICE_CHARGE = true;
 const GLOBAL_DISCOUNT = false;
 
 module.exports = {
