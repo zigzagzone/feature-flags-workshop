@@ -1,6 +1,5 @@
 const fs = require("fs");
 const config = require("../config");
-const GLOBAL_DISCOUNT = false;
 
 module.exports = {
   findOrderById: function(id) {
