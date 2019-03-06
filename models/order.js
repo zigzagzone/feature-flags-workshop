@@ -1,6 +1,6 @@
 const fs = require("fs");
-const PROMO_CODE = true;
-const SERVICE_CHARGE = true;
+const PROMO_CODE = false;
+const GLOBAL_DISCOUNT = 1;
 
 module.exports = {
   findOrderById: function(id) {
@@ -45,6 +45,7 @@ module.exports = {
   getTotalFromOrder: function(order) {
     const total =
       order.subtotal + order.service_charge + order.tax - order.discount;
-    return total - total * 0.5;
+    const globalDiscount = (total * GLOBAL_DISCOUNT)
+    return total - globalDiscount
   }
 };
