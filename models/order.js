@@ -38,6 +38,6 @@ module.exports = {
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
-    return 0;
+    return order.subtotal + order.service_charge + order.tax - order.discount
   }
 };
