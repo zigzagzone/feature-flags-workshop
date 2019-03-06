@@ -1,5 +1,6 @@
 const fs = require("fs");
 const PROMO_CODE = true;
+const SERVICE_CHARGE = true;
 
 module.exports = {
   findOrderById: function(id) {
@@ -38,7 +39,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return order.subtotal * 0.1;
+    return SERVICE_CHARGE ? order.subtotal * 0.1 : 0;
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
