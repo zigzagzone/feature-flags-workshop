@@ -12,9 +12,21 @@ module.exports = {
       return (acc += cur.quantity * cur.price);
     }, 0);
   },
-  // TODO: Implement this function
   getDiscountFromOrder: function(order) {
-    return 0;
+    const { promo_code, subtotal } = order
+    let discount = 0 
+    switch (promo_code) {
+      case 'FULLSTACK':
+        discount = 10
+        break;
+      case '5MAR':
+        discount = 5
+        break;
+      default:
+        break;
+    }
+
+    return subtotal * (discount / 100)
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
