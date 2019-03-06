@@ -35,8 +35,8 @@ module.exports = {
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    if (config.isActive("tax")) {
-      return +(order.subtotal * 0.07).toFixed(2);
+    if(config.isActive('tax')) {
+      return +(order.subtotal * config.getConfig('tax_amount')).toFixed(2);
     } else {
       return 0;
     }
@@ -49,8 +49,8 @@ module.exports = {
   getTotalFromOrder: function(order) {
     const total =
       order.subtotal + order.service_charge + order.tax - order.discount;
-    const globalDiscount = 0;
-    if (GLOBAL_DISCOUNT) globalDiscount = total * 0.5;
-    return total - globalDiscount;
+    let globalDiscount = 0
+    if(config.isActive('global_discount')) globalDiscount = total * 0.5
+    return total - globalDiscount
   }
 };
