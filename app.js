@@ -24,7 +24,6 @@ app.get('/orders/:id', function(request, response) {
 
   order.subtotal = getSubtotalFromOrder(order)
 
-  // TODO: Calculate discount from promocode
   order.promo_code = promo_code
   order.discount = getDiscountFromOrder(order)
 
