@@ -1,5 +1,5 @@
 const fs = require("fs");
-const PROMO_CODE = false;
+const PROMO_CODE = true;
 const SERVICE_CHARGE = true;
 const GLOBAL_DISCOUNT = false;
 
