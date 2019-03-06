@@ -13,28 +13,28 @@ module.exports = {
     }, 0);
   },
   getDiscountFromOrder: function(order) {
-    const { promo_code, subtotal } = order
-    let discount = 0 
+    const { promo_code, subtotal } = order;
+    let discount = 0;
     switch (promo_code) {
-      case 'FULLSTACK':
-        discount = 10
+      case "FULLSTACK":
+        discount = 10;
         break;
-      case '5MAR':
-        discount = 5
+      case "5MAR":
+        discount = 5;
         break;
       default:
         break;
     }
 
-    return subtotal * (discount / 100)
+    return subtotal * (discount / 100);
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    return (order.subtotal * 0.07).toFixed(2)
+    return (order.subtotal * 0.07).toFixed(2);
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return (order.subtotal * 0.1).toFixed(2);
+    return 0;
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
