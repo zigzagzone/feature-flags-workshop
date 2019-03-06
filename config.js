@@ -4,7 +4,7 @@ const FEATURE = {
   service_charge: true,
   total: false,
   tax_amount: 0.07,
-  global_discount: true
+  global_discount: false
 };
 
 module.exports = {
