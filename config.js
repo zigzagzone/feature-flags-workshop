@@ -1,7 +1,7 @@
 const FEATURE = {
   "promo_code": false,
   "tax": true,
-  "service_charge": false,
+  "service_charge": true,
   "total": false,
   "tax_amount": 0.07,
   "global_discount": true,
