@@ -1,5 +1,5 @@
 const fs = require("fs");
-const PROMO_CODE = false
+const PROMO_CODE = false;
 
 module.exports = {
   findOrderById: function(id) {
@@ -14,16 +14,16 @@ module.exports = {
     }, 0);
   },
   getDiscountFromOrder: function(order) {
-    const { promo_code, subtotal } = order
-    let discount = 0 
+    const { promo_code, subtotal } = order;
+    let discount = 0;
 
-    if(PROMO_CODE) {
+    if (PROMO_CODE) {
       switch (promo_code) {
-        case 'FULLSTACK':
-          discount = 10
+        case "FULLSTACK":
+          discount = 10;
           break;
-        case '5MAR':
-          discount = 5
+        case "5MAR":
+          discount = 5;
           break;
         default:
           break;
@@ -44,7 +44,6 @@ module.exports = {
   getTotalFromOrder: function(order) {
     const total =
       order.subtotal + order.service_charge + order.tax - order.discount;
-    console.log("total", total);
     return total - total * 0.5;
   }
 };
