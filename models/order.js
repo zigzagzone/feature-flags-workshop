@@ -1,5 +1,5 @@
 const fs = require("fs");
-const PROMO_CODE = false;
+const PROMO_CODE = true;
 
 module.exports = {
   findOrderById: function(id) {
@@ -34,7 +34,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    return +(order.subtotal * 0.07).toFixed(2)
+    return +(order.subtotal * 0.07).toFixed(2);
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
