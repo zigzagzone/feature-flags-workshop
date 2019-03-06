@@ -19,13 +19,13 @@ app.use(express.static('public'))
 
 app.get('/orders/:id', function(request, response) {
   const { id } = request.params
-  const { promo_code } = request.query
+  const { promo_code,  } = request.query
   const order = findOrderById(id)
 
   order.subtotal = getSubtotalFromOrder(order)
 
   order.promo_code = promo_code
-  order.discount = getDiscountFromOrder(order)
+  order.discount = getDiscountFromOrder(order) 
 
   // TODO: Calculate tax
   order.tax = getTaxFromOrder(order)

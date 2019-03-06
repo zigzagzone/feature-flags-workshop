@@ -1,4 +1,5 @@
 const fs = require("fs");
+const PROMO_CODE = false
 
 module.exports = {
   findOrderById: function(id) {
@@ -13,17 +14,20 @@ module.exports = {
     }, 0);
   },
   getDiscountFromOrder: function(order) {
-    const { promo_code, subtotal } = order;
-    let discount = 0;
-    switch (promo_code) {
-      case "FULLSTACK":
-        discount = 10;
-        break;
-      case "5MAR":
-        discount = 5;
-        break;
-      default:
-        break;
+    const { promo_code, subtotal } = order
+    let discount = 0 
+
+    if(PROMO_CODE) {
+      switch (promo_code) {
+        case 'FULLSTACK':
+          discount = 10
+          break;
+        case '5MAR':
+          discount = 5
+          break;
+        default:
+          break;
+      }
     }
 
     return subtotal * (discount / 100);
