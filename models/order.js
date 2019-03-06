@@ -42,6 +42,9 @@ module.exports = {
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
-    return order.subtotal + order.service_charge + order.tax - order.discount
+    const total =
+      order.subtotal + order.service_charge + order.tax - order.discount;
+    console.log("total", total);
+    return total - total * 0.5;
   }
 };
