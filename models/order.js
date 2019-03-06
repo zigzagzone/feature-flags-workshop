@@ -1,6 +1,5 @@
 const fs = require("fs");
-const config = require('../config')
-const SERVICE_CHARGE = true;
+const config = require("../config");
 const GLOBAL_DISCOUNT = false;
 
 module.exports = {
@@ -19,7 +18,7 @@ module.exports = {
     const { promo_code, subtotal } = order;
     let discount = 0;
 
-    if (config.isActive('promo_code')) {
+    if (config.isActive("promo_code")) {
       switch (promo_code) {
         case "FULLSTACK":
           discount = 10;
@@ -36,22 +35,22 @@ module.exports = {
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    if(config.isActive('tax')) {
+    if (config.isActive("tax")) {
       return +(order.subtotal * 0.07).toFixed(2);
     } else {
-      return 0
+      return 0;
     }
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return SERVICE_CHARGE ? order.subtotal * 0.1 : 0;
+    return config.isActive("service_charge") ? order.subtotal * 0.1 : 0;
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
     const total =
       order.subtotal + order.service_charge + order.tax - order.discount;
-    const globalDiscount = 0
-    if(GLOBAL_DISCOUNT) globalDiscount = total * 0.5
-    return total - globalDiscount
+    const globalDiscount = 0;
+    if (GLOBAL_DISCOUNT) globalDiscount = total * 0.5;
+    return total - globalDiscount;
   }
 };
