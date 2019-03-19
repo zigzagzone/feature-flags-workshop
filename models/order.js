@@ -36,7 +36,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
-    const total = order.subtotal + (order.promo_code ? order.promo_code : 0) + order.discount + order.tax + order.service_charge
+    const total = (parseFloat(order.subtotal) - parseFloat(order.discount)) + parseFloat(order.tax) + parseFloat(order.service_charge)
     return total
   }
 }
