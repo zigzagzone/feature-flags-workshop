@@ -14,7 +14,14 @@ module.exports = {
   },
   // TODO: Implement this function
   getDiscountFromOrder: function(order) {
-    return 0
+    let promo_code = order.promo_code
+    let promo = 0
+    if(promo_code == "fullstackjs"){
+        promo = order.subtotal * 0.1
+    }else if(promo_code == "19mar"){
+        promo = order.subtotal * 0.05
+    }
+    return promo
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
@@ -22,7 +29,9 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return 0
+    return order.order_items.reduce(function(acc, cur) {
+      return acc += cur.quantity * cur.price
+    }, 0)*0.1
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
