@@ -1,5 +1,5 @@
 //config.js 
-const FEATURE = 
+const FEATURE = { 
     promo_code: true,
     tax: true,
     service_charge: true,
