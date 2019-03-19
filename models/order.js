@@ -18,6 +18,7 @@ module.exports = {
     let promo_code = order.promo_code
     let promo = 0
     if(config.isActive("promo_code")){
+    //if(config.FEATURE.promo_code){
       if(promo_code == "fullstackjs"){
         promo = order.subtotal * 0.1
       }else if(promo_code == "19mar"){
