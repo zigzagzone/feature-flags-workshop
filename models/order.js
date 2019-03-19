@@ -22,7 +22,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return (order.subtotal * 0.1).toFixed(2)
+    return (order.subtotal * 0.1)
     // return 0
   },
   // TODO: Implement this function
