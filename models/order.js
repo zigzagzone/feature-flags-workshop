@@ -25,7 +25,10 @@ module.exports = {
   },
   // TODO: Implement this function
   getTaxFromOrder: function(order) {
-    return (order.subtotal * 0.07).toFixed(2)
+    if(config.isActive('tax'))
+      return (order.subtotal * 0.07).toFixed(2)
+    else
+      return 0
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
