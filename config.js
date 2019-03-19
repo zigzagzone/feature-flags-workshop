@@ -2,7 +2,7 @@
 const FEATURE = { 
     promo_code: true,
     tax: false,
-    service_charge: true,
+    service_charge: false,
     total: true
 }
 
