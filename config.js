@@ -1,7 +1,7 @@
 //config.js 
 const FEATURE = { 
     promo_code: true,
-    tax: true,
+    tax: false,
     service_charge: true,
     total: false
 }
