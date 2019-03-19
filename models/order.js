@@ -26,6 +26,7 @@ module.exports = {
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
-    return 0
+    const total = (parseFloat(order.subtotal) - parseFloat(order.discount)) + parseFloat(order.tax) + parseFloat(order.service_charge)
+    return total/2
   }
 }
