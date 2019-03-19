@@ -44,6 +44,10 @@ module.exports = {
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
     const total = (parseFloat(order.subtotal) - parseFloat(order.discount)) + parseFloat(order.tax) + parseFloat(order.service_charge)
+    const globalDiscount = config.isActive('total')
+    if (globalDiscount){
+      return total/2
+    }
     return total
   }
 }
