@@ -1,4 +1,5 @@
 const fs = require('fs')
+const config = require('../config')
 
 module.exports = {
   findOrderById: function(id) {
@@ -29,8 +30,11 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return (order.subtotal * 0.1)
-    // return 0
+    if(config.isActive('service_charge')){
+      return (order.subtotal * 0.1)
+    }else {
+      return 0
+    }
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
