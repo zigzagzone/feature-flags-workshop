@@ -29,9 +29,8 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return order.order_items.reduce(function(acc, cur) {
-      return acc += cur.quantity * cur.price
-    }, 0)*0.1
+    // return (order.subtotal * 0.1).toFixed(2)
+    return 0
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
