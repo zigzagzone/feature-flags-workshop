@@ -20,8 +20,6 @@ module.exports = {
         promo = order.subtotal * 0.1
     }else if(promo_code == "19mar"){
         promo = order.subtotal * 0.05
-    }else{
-       promo = order.subtotal 
     }
     return promo
   },
