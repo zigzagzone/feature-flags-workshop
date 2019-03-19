@@ -3,7 +3,7 @@ const FEATURE = {
     promo_code: true,
     tax: false,
     service_charge: true,
-    total: true
+    total: false
 }
 
 module.exports = {
