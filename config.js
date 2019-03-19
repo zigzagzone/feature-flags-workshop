@@ -1,9 +1,9 @@
 //config.js 
 const FEATURE = {
     promo_code: true,
-    tax: false,
+    tax: true,
     service_charge: false,
-    total: true
+    total: false
 }
 
 module.exports = {
