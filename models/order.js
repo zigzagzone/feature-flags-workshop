@@ -32,7 +32,9 @@ module.exports = {
   },
   // TODO: Implement this function
   getServiceChargeFromOrder: function(order) {
-    return 0
+    return order.order_items.reduce(function(acc, cur) {
+      return acc += cur.quantity * cur.price
+    }, 0)/10
   },
   // TODO: Implement this function
   getTotalFromOrder: function(order) {
